@@ -1,0 +1,21 @@
+li.search-input > input {
+  display: inline;
+}
+li.search-input > .search-text {
+  width: 150px;
+}
+ul.list-group > li > a {
+  cursor: pointer;
+  color: #007bff;
+}
+ul.style-list {
+  height: 400px;
+  overflow: auto;
+}
+li.autocomplete {
+  position: relative;
+}
+li.autocomplete > div.autocomplete {
+  position: absolute;
+  z-index: 1;
+}

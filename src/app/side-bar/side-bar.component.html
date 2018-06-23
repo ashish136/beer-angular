@@ -1,0 +1,51 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <h4>Sort alcholic content</h4>
+  </li>
+  <!-- <li class="list-group-item">
+    <a (click)="sort(0)">Clear</a>
+  </li> -->
+  <li class="list-group-item">
+    <a (click)="setSearchParams(1,1)">Ascending</a>
+  </li>
+  <li class="list-group-item">
+    <a (click)="setSearchParams(1,-1)">Descending</a>
+  </li>
+</ul>
+<ul class="list-group">
+  <li class="list-group-item">
+    <h4>Search by name</h4>
+  </li>
+  <li class="list-group-item search-input autocomplete">
+
+    <input class="search-text" type="text" placeholder="enter name" [(ngModel)]="beerSearch" (keyup)="showSuggestions()" (blur)="autocompleteEnd()">
+    <div class="autocomplete" *ngIf="autoCompleteBeers!=undefined && autoCompleteBeers.length!=0">
+      <ul class="list-group">
+
+        <li class="list-group-item" *ngFor="let data of autoCompleteBeers | slice : 0 : 10">
+          <a (click)="this.beerSearch = data.name;">{{data.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <input type="button" (click)="setSearchParams(2,this.beerSearch)" value="search">
+
+  </li>
+
+  <!-- <li class="list-group-item">
+    <a href="">Clear</a>
+  </li> -->
+
+</ul>
+<ul class="list-group">
+  <li class="list-group-item">
+    <h4>choose your style</h4>
+  </li>
+  <li class="list-group-item">
+    <input class="style-input" type="text" placeholder="search styles" [(ngModel)]="style">
+  </li>
+</ul>
+<ul class="list-group style-list">
+  <li *ngFor="let style of beerStyle" class="list-group-item">
+    <a (click)="setSearchParams(3,style)">{{style}}</a>
+  </li>
+</ul>
