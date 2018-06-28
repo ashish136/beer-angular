@@ -10,7 +10,7 @@ import { FilterBeerPipe } from "./filter-beer.pipe";
 import { FormsModule } from "@angular/forms";
 import { SortBeerPipePipe } from "./sort-beer-pipe.pipe";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-
+import { PaginationComponent } from "./pagination/pagination.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,14 +18,15 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     BeerListComponent,
     MyBeersComponent,
     FilterBeerPipe,
-    SortBeerPipePipe
+    SortBeerPipePipe,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

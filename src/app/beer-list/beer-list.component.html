@@ -17,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let beer of  beers | filterBeer : searchBeer : selectedStyle | sortBeerPipe : sortOrder">
+            <tr *ngFor="let beer of  beers | filterBeer : searchBeer : selectedStyle | sortBeerPipe : sortOrder | slice : startIndex : endIndex">
               <td>{{beer.abv}}</td>
               <td>{{beer.ibu}}</td>
               <td>{{beer.id}}</td>
@@ -34,6 +34,7 @@
           </tbody>
         </table>
       </div>
+      <app-pagination (pageChangeEvent)="pageChange($event)"></app-pagination>
     </div>
   </div>
 
