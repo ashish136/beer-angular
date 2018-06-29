@@ -9,6 +9,38 @@
             aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- <div class="input-group nav-form">
+            
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+
+        </div> -->
+        <div class="input-group nav-form autocomplete-parent">
+            <div class="input-group-prepend">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn" id="dropdownBasic1" ngbDropdownToggle>Toggle</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="search-dropdown">
+                        <li *ngFor="let style of beerStyle" class="list-group-item">
+                            <a>{{style}}</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="beerSearch" (keyup)="showSuggestions()">
+            <!-- (blur)="autocompleteEnd()" -->
+            <div class="input-group-append">
+                <span class="input-group-text">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+            <div class="autocomplete-child" *ngIf="autoCompleteBeers!=undefined && autoCompleteBeers.length!=0">
+                <ul class="list-group">
+
+                    <li class="list-group-item autocomplete-item" *ngFor="let data of autoCompleteBeers | slice : 0 : 10">
+                        <a (click)="this.beerSearch = data.name;">{{data.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="collapse navbar-collapse " id="navbarSupportedContent" [ngbCollapse]="!isCollapsed">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link active" routerLink="/beers">Find Beers</a>
