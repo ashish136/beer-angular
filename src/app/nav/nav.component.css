@@ -1,0 +1,27 @@
+.nav-form {
+  width: 50%;
+  margin-left: 12%;
+}
+.search-dropdown {
+  max-height: 400px;
+  overflow: auto;
+}
+.autocomplete-parent {
+  position: relative;
+}
+.autocomplete-child {
+  position: absolute;
+  z-index: 1;
+  top: 38px;
+  left: 16%;
+  width: 77%;
+}
+li.autocomplete-item {
+  cursor: pointer;
+}
+li.autocomplete-item:hover {
+  background-color: rgb(230, 221, 221);
+}
+button {
+  cursor: pointer;
+}

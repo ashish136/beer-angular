@@ -11,6 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { SortBeerPipePipe } from "./sort-beer-pipe.pipe";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { PaginationComponent } from "./pagination/pagination.component";
+import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { PaginationComponent } from "./pagination/pagination.component";
     MyBeersComponent,
     FilterBeerPipe,
     SortBeerPipePipe,
-    PaginationComponent
+    PaginationComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

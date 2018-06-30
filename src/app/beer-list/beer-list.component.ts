@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BeerServiceService } from "../beer-service.service";
+import { ShareServiceService } from "../share-service.service";
 import { SideBarComponent } from "../side-bar/side-bar.component";
 import { Beer } from "../beer";
 
@@ -15,7 +16,10 @@ export class BeerListComponent implements OnInit {
   selectedStyle: string;
   startIndex: number;
   endIndex: number;
-  constructor(private beerService: BeerServiceService) {
+  constructor(
+    private beerService: BeerServiceService,
+    private shareService: ShareServiceService
+  ) {
     this.sortOrder = 0;
     this.startIndex = 0;
     this.endIndex = 10;
@@ -23,6 +27,11 @@ export class BeerListComponent implements OnInit {
 
   ngOnInit() {
     this.getBeers();
+    this.shareService.changeList.subscribe(Obj => {
+      this.searchBeer = Obj.name;
+      this.sortOrder = Obj.order;
+      this.selectedStyle = Obj.style;
+    });
   }
 
   getBeers(): void {
