@@ -1,25 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-light">
   <div class="container">
     <a class="navbar-brand">CRAFTS BEER</a>
     <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button> -->
-    <button type="button" class="btn btn-outline-primary navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
-      aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- <div class="input-group nav-form">
-          
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-
-      </div> -->
     <div class="input-group nav-form autocomplete-parent">
       <div class="input-group-prepend">
         <div ngbDropdown class="d-inline-block">
-          <button class="btn" id="dropdownBasic1" ngbDropdownToggle>All</button>
+          <button class="btn style-btn" id="dropdownBasic1" ngbDropdownToggle>
+            <span>{{searchObj.style}}</span>
+          </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="search-dropdown">
-            <li *ngFor="let style of beerStyle" class="list-group-item" (click)="setSearchParams(3,style)">
+            <li *ngFor="let style of beerStyle" class="style-list" (click)="setSearchParams(3,style)">
               <a>{{style}}</a>
             </li>
           </div>
@@ -40,6 +33,16 @@
         </ul>
       </div>
     </div>
+    <button type="button" class="btn btn-outline-primary navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <div class="input-group nav-form">
+          
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+
+      </div> -->
+
     <div class="collapse navbar-collapse " id="navbarSupportedContent" [ngbCollapse]="!isCollapsed">
       <div class="navbar-nav ml-auto">
         <a class="nav-item nav-link active" routerLink="/beers">Find Beers</a>

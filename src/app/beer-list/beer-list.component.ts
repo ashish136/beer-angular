@@ -40,11 +40,11 @@ export class BeerListComponent implements OnInit {
       console.log(this.beers);
     });
   }
-  changeBeerList(Obj: any) {
-    this.searchBeer = Obj.name;
-    this.sortOrder = Obj.order;
-    this.selectedStyle = Obj.style;
-  }
+  // changeBeerList(Obj: any) {
+  //   this.searchBeer = Obj.name;
+  //   this.sortOrder = Obj.order;
+  //   this.selectedStyle = Obj.style;
+  // }
   pageChange(pageNo: number) {
     this.startIndex = 10 * (pageNo - 1);
     this.endIndex = 10 * (pageNo - 1) + 10;

@@ -1,17 +1,22 @@
+nav {
+  background-color: #f1a300 !important;
+  color: #fff;
+}
 .nav-form {
   width: 50%;
   margin-left: 12%;
 }
 .search-dropdown {
-  max-height: 400px;
+  max-height: 300px;
   overflow: auto;
+  width: 225px;
 }
 .autocomplete-parent {
   position: relative;
 }
 .autocomplete-child {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 38px;
   left: 16%;
   width: 77%;
@@ -24,4 +29,21 @@ li.autocomplete-item:hover {
 }
 button {
   cursor: pointer;
+}
+li.style-list {
+  list-style-type: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+li.style-list:hover {
+  background-color: rgb(230, 221, 221);
+}
+button.style-btn {
+  padding-left: 5px;
+}
+button.style-btn > span {
+  display: inline-block;
+  max-width: 110px;
+  font-size: 13px;
+  overflow: hidden;
 }

@@ -21,6 +21,7 @@ export class NavComponent implements OnInit {
     this.beerStyle = ["All"];
     this.beerSearch = "";
     this.searchObj = {};
+    this.searchObj.style="All";
   }
   ngOnInit() {
     this.getBeerStyle();

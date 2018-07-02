@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container beer-list">
   <div class="row">
 
-    <app-side-bar class="col-md-3" (searchEvent)="changeBeerList($event)"></app-side-bar>
-    <div class="col-md-9">
+    <!-- <app-side-bar class="col-md-3" (searchEvent)="changeBeerList($event)"></app-side-bar> -->
+    <div class="col-md-12">
       <div class="table-responsive">
         <table class="table table-hover all-beers">
           <thead>
@@ -35,19 +35,6 @@
         </table>
       </div>
       <app-pagination (pageChangeEvent)="pageChange($event)"></app-pagination>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with dropdown button">
-      </div>
 
     </div>
   </div>
