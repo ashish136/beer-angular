@@ -1,3 +1,47 @@
-<p>
-  my-beers works!
-</p>
+<div class="container beer-list">
+
+  <div class="row">
+
+    <!-- <app-side-bar class="col-md-3" (searchEvent)="changeBeerList($event)"></app-side-bar> -->
+    <div class="col-md-12">
+
+
+      <div class="table-responsive">
+        <table class="table table-hover all-beers">
+          <thead>
+            <tr>
+              <th>Alcholic content</th>
+              <th>Bitterness</th>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Style</th>
+              <th>Ounces</th>
+
+            </tr>
+          </thead>
+          <!-- <div style="position : relative;height: 100px;width: 100%">
+            <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+          </div> -->
+          <tbody>
+
+            <tr *ngFor="let beer of  myBeers ">
+              <td>{{beer.abv}}</td>
+              <td>{{beer.ibu}}</td>
+              <td>{{beer.id}}</td>
+              <td>{{beer.name}}</td>
+              <td>{{beer.style}}</td>
+              <td>{{beer.ounces}}</td>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+</div>

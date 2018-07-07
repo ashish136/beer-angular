@@ -1,4 +1,5 @@
 import { Injectable, Output, EventEmitter } from "@angular/core";
+import { timeout } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
@@ -11,6 +12,6 @@ export class ShareServiceService {
     this.changeList.emit(Obj);
   }
   getPaginationLength(len: number) {
-    this.changeLength.emit(len);
+    setTimeout(() => this.changeLength.emit(len), 1);
   }
 }

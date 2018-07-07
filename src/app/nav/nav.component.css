@@ -1,10 +1,33 @@
 nav {
   background-color: #f1a300 !important;
   color: #fff;
+  padding-bottom: 0px;
+}
+p {
+  margin: 0px;
+  line-height: 6px;
 }
 .nav-form {
-  width: 50%;
-  margin-left: 12%;
+  width: 80%;
+  /* margin-left: 12%; */
+}
+.flex-brand {
+  position: relative;
+  top: -10px;
+  left: -70px;
+}
+.flex-brand > a:nth-child(1) {
+  padding: 0px;
+  line-height: 9px;
+  font-weight: 700;
+}
+.flex-brand > a:nth-child(2) {
+  font-size: 12px;
+}
+
+.flex-container {
+  width: 60%;
+  margin-left: 2%;
 }
 .search-dropdown {
   max-height: 300px;
@@ -18,11 +41,12 @@ nav {
   position: absolute;
   z-index: 2;
   top: 38px;
-  left: 16%;
-  width: 77%;
+  /* left: 16%; */
+  width: 100%;
 }
 li.autocomplete-item {
   cursor: pointer;
+  color: #000;
 }
 li.autocomplete-item:hover {
   background-color: rgb(230, 221, 221);
@@ -46,4 +70,29 @@ button.style-btn > span {
   max-width: 110px;
   font-size: 13px;
   overflow: hidden;
+}
+.sort-dropdown {
+  margin-top: 20px;
+}
+.sort-dropdown a {
+  padding: 0px;
+  margin: 0px;
+}
+.sort-dropdown p:nth-child(1) {
+  display: block;
+  font-size: 14px;
+}
+.sort-dropdown p:nth-child(2) {
+  padding-left: 24px;
+  display: inline;
+  font-weight: 700;
+}
+.dropdown-list {
+  margin-top: 0;
+  padding: 10px;
+  font-size: 14px;
+}
+.dropdown-list > div:hover {
+  background-color: rgb(230, 221, 221);
+  cursor: pointer;
 }

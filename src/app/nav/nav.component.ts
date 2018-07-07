@@ -21,7 +21,7 @@ export class NavComponent implements OnInit {
     this.beerStyle = ["All"];
     this.beerSearch = "";
     this.searchObj = {};
-    this.searchObj.style="All";
+    this.searchObj.style = "All";
   }
   ngOnInit() {
     this.getBeerStyle();
@@ -49,9 +49,11 @@ export class NavComponent implements OnInit {
   };
   showSuggestions(): void {
     let regex: RegExp;
-    regex = new RegExp(this.beerSearch, "i");
+    if (this.beerSearch != undefined && this.beerSearch != "")
+      regex = new RegExp(" " + this.beerSearch, "i");
+    else regex = new RegExp(this.beerSearch, "i");
     this.autoCompleteBeers = this.beers.filter(beer => {
-      return beer.name.search(regex) != -1;
+      return (" " + beer.name).search(regex) != -1;
     }, this);
   }
   autocompleteEnd(): void {

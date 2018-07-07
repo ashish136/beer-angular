@@ -11,7 +11,9 @@ export class FilterBeerPipe implements PipeTransform {
 
   transform(beer: Beer[], search: string, style: string): Beer[] {
     if (beer != undefined) {
-      this.regex = new RegExp(search, "i");
+      if (search != undefined && search != "")
+        this.regex = new RegExp(" " + search, "i");
+      else this.regex = new RegExp(search, "i");
       this.filterBeer = beer.filter(beer => {
         if (
           style != undefined &&
@@ -19,8 +21,10 @@ export class FilterBeerPipe implements PipeTransform {
           style != null &&
           style != "All"
         )
-          return beer.name.search(this.regex) != -1 && beer.style == style;
-        else return beer.name.search(this.regex) != -1;
+          return (
+            (" " + beer.name).search(this.regex) != -1 && beer.style == style
+          );
+        else return (" " + beer.name).search(this.regex) != -1;
       }, this);
       this.shareService.getPaginationLength(this.filterBeer.length);
       return this.filterBeer;

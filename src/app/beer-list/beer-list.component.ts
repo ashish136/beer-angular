@@ -16,6 +16,7 @@ export class BeerListComponent implements OnInit {
   selectedStyle: string;
   startIndex: number;
   endIndex: number;
+  loading: boolean;
   constructor(
     private beerService: BeerServiceService,
     private shareService: ShareServiceService
@@ -23,6 +24,7 @@ export class BeerListComponent implements OnInit {
     this.sortOrder = 0;
     this.startIndex = 0;
     this.endIndex = 10;
+    this.loading = true;
   }
 
   ngOnInit() {
@@ -37,14 +39,21 @@ export class BeerListComponent implements OnInit {
   getBeers(): void {
     this.beerService.getBeers().subscribe(allBeer => {
       this.beers = allBeer;
+      this.loading = false;
       console.log(this.beers);
     });
   }
-  // changeBeerList(Obj: any) {
-  //   this.searchBeer = Obj.name;
-  //   this.sortOrder = Obj.order;
-  //   this.selectedStyle = Obj.style;
-  // }
+  addBeer(beer) {
+    if (localStorage.myBeers == undefined || localStorage.myBeers == "") {
+      let arr = [];
+      arr.push(beer);
+      localStorage.myBeers = JSON.stringify(arr);
+    } else {
+      let arr = JSON.parse(localStorage.myBeers);
+      arr.push(beer);
+      localStorage.myBeers = JSON.stringify(arr);
+    }
+  }
   pageChange(pageNo: number) {
     this.startIndex = 10 * (pageNo - 1);
     this.endIndex = 10 * (pageNo - 1) + 10;

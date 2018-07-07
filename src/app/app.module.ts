@@ -11,7 +11,8 @@ import { FormsModule } from "@angular/forms";
 import { SortBeerPipePipe } from "./sort-beer-pipe.pipe";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { PaginationComponent } from "./pagination/pagination.component";
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from "./nav/nav.component";
+import { LoadingModule } from "ngx-loading";
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { NavComponent } from './nav/nav.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    LoadingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,11 @@
 <div class="container beer-list">
+
   <div class="row">
 
     <!-- <app-side-bar class="col-md-3" (searchEvent)="changeBeerList($event)"></app-side-bar> -->
     <div class="col-md-12">
+
+
       <div class="table-responsive">
         <table class="table table-hover all-beers">
           <thead>
@@ -16,7 +19,11 @@
               <th>Add Beer</th>
             </tr>
           </thead>
+          <!-- <div style="position : relative;height: 100px;width: 100%">
+            <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+          </div> -->
           <tbody>
+
             <tr *ngFor="let beer of  beers | filterBeer : searchBeer : selectedStyle | sortBeerPipe : sortOrder | slice : startIndex : endIndex">
               <td>{{beer.abv}}</td>
               <td>{{beer.ibu}}</td>
@@ -25,7 +32,7 @@
               <td>{{beer.style}}</td>
               <td>{{beer.ounces}}</td>
               <td>
-                <a href="" ng-click="addBeer(beer)">
+                <a class="add-beer" (click)="addBeer(beer)">
                   <i class="fas fa-beer"></i>
                 </a>
               </td>
@@ -38,5 +45,7 @@
 
     </div>
   </div>
+
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
 
 </div>

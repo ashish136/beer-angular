@@ -2,3 +2,7 @@
   margin-top: 25px;
   font-size: 15px;
 }
+a.add-beer {
+  color: #f1a300;
+  cursor: pointer;
+}

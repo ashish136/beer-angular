@@ -19,9 +19,11 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit() {
     // this.calcParameter();
-    this.shareService.changeLength.subscribe(
-      (len: number) => (this.length = len)
-    );
+    console.log(this.length);
+    this.shareService.changeLength.subscribe((len: number) => {
+      this.length = len;
+      console.log(this.length);
+    });
   }
   changePage(pageNo: number) {
     this.pageChangeEvent.emit(pageNo);
