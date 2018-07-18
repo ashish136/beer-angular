@@ -11,6 +11,7 @@ const httpOptions = {
 })
 export class BeerServiceService {
   private beerUrl = "http://starlord.hackerearth.com/beercraft";
+  // private beerUrl = "../../beers.json";
   beerObservable;
   beerData: Beer[];
   beerMap = map((response: any) => {
